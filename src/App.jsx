@@ -1,6 +1,3 @@
-// React
-import { useState, useEffect } from "react"
-
 // Styled Components
 import { AppContainer, Title, ThemeButton } from "./styles/AppComponents"
 import { darkTheme, lightTheme } from "./styles/theme"
@@ -8,24 +5,16 @@ import { ThemeProvider } from "styled-components"
 
 // Hooks
 import { useTheme } from "./hooks/useTheme"
+import { useGetUser } from "./hooks/useGetUser"
 
 // Components
 import Search from "./components/Search/Search"
 import UserCard from "./components/UserCard/UserCard"
 
+
 function App() {
   const { isDarkTheme, toggleTheme } = useTheme()
-  
-  const [keyword, setKeyword] = useState("Francogalfre")
-  const [user, setUser] = useState({})
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${keyword}`)
-      .then(response => response.json())
-      .then(json => {
-        setUser(json)
-      })
-  }, [keyword]) 
+  const { setKeyword, user } = useGetUser()
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>

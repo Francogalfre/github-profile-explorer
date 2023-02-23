@@ -1,25 +1,5 @@
 // Styled Components
-import {
-  Container,
-  CardLeft,
-  Image,
-  ProfileName,
-  DivFlex,
-  DivRow,
-  ProfileUsername,
-  SocialText,
-  SocialIcons,
-  CardRight,
-  DescriptionTitle,
-  Description,
-  BlogLink,
-  Card,
-  CardTitle,
-  CardText,
-  Button,
-  DescriptionContainer,
-  GitLogo
-} from "./_Styled.js";
+import { Container, CardLeft, Image, Title, SocialMediaContainer, DivFlex, DivRow, Subtitle, CardRight, BlogLink, Card, Button, DescriptionContainer } from "./_Styled.js";
 
 // Icons
 import { FaCity, FaMap, FaTwitter, FaLink } from "react-icons/fa";
@@ -70,42 +50,45 @@ const UserCard = ({ user }) => {
         <a href={user.html_url}>
           <Image src={user.avatar_url} alt={`Avatar of ${user.name}`} />
         </a>
+
         <div>
-          <ProfileName>{user.name}</ProfileName>
-          <ProfileUsername>@{user.login}</ProfileUsername>
+          <Title>{user.name}</Title>
+          <Subtitle>@{user.login}</Subtitle>
         </div>
+
         <DivFlex>
           {SOCIAL_MEDIA.map((media) => (
-            <DivRow key={media.key}>
-              <SocialIcons>{media.icon}</SocialIcons>
-              <SocialText>
+            <SocialMediaContainer key={media.key}>
+              <div>{media.icon}</div>
+              <span>
                 {media.text === "null" ? "No Available" : `${media.text}`}
-              </SocialText>
-            </DivRow>
+              </span>
+            </SocialMediaContainer>
           ))}
         </DivFlex>
       </CardLeft>
 
       <CardRight>
         <DescriptionContainer>
-          <DescriptionTitle>Description</DescriptionTitle>
-          <GitLogo href={user.html_url}>
+          <Title>Description</Title>
+          <a href={user.html_url}>
             <RxGithubLogo />
-          </GitLogo>
+          </a>
         </DescriptionContainer>
-        <Description>{user.bio}</Description>
+
+        <Subtitle>{user.bio}</Subtitle>
 
         <BlogLink>
           <FaLink />
-          {user.blog === "" ? "Blog no Available" : `${user.blog}`}
+          <a href={user.blog}>{user.blog === "" ? "Blog no Available" : `${user.blog}`}</a>
         </BlogLink>
 
         <DivRow>
           {
             PROFILE_FOLLOWS.map((card) => (
               <Card key={card.key}>
-                <CardTitle>{card.title}</CardTitle>
-                <CardText>{card.text}</CardText>
+                <h1>{card.title}</h1>
+                <span>{card.text}</span>
               </Card>
             ))
           }

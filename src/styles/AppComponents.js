@@ -3,11 +3,13 @@ import styled from "styled-components"
 
 export const AppContainer = styled.section`
   width: 100%;
-  height: 100vh; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding-top: 40px;
+  align-items: center;
+  padding: 70px 0px;
   background-color: ${(props) => props.theme.body};
-  transition: all 0.3s ease;
 `
 
 export const Title = styled.h2`
@@ -15,13 +17,12 @@ export const Title = styled.h2`
   font-weight: 500;
   font-size: 40px;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 `
 
 export const ThemeButton = styled.button`
   width: 250px;
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 15px 20px;
   font-size: 15px;
   font-weight: 600;
@@ -30,7 +31,6 @@ export const ThemeButton = styled.button`
   color: ${(props) => props.theme.title};
   cursor: pointer;
   border: none;
-  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-2px);

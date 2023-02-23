@@ -4,18 +4,21 @@ import styled from "styled-components"
 export const Form = styled.form`
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 40px;
   gap: 15px;
 `
 
 export const Input = styled.input`
   background: transparent;
-  padding: 5px 13px;
+  padding: 5px 12px;
+  width: 300px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: ${(props) => props.theme.title};
-  transition: all 0.3s ease;
 
   &:focus-visible {
     border: 1px solid #ccc;
@@ -24,6 +27,10 @@ export const Input = styled.input`
   
   &:hover {
     transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 200px;
   }
 `
 
@@ -37,7 +44,6 @@ export const Button = styled.button`
   padding: 5px 13px;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-2px);
