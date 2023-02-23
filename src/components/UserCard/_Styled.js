@@ -192,7 +192,7 @@ export const CardRight = styled.div`
 export const DescriptionContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 95%;
   align-items: center;
 
   & a {
@@ -201,6 +201,10 @@ export const DescriptionContainer = styled.div`
     border: none;
     color: ${(props) => props.theme.title};
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 630px) {
+    width: 80%;
   }
 `
 

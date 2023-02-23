@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 export function useGetUser()  {
-  const [keyword, setKeyword] = useState("Francogalfre")
+  const [keyword, setKeyword] = useState("")
   const [user, setUser] = useState({})
 
   useEffect(() => {

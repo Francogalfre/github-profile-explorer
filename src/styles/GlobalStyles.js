@@ -1,5 +1,6 @@
 // Styled Components
 import { createGlobalStyle } from "styled-components";
+import { withTheme } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -9,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     transition: all 0.2s ease;
   }
+
+  html {
+    background-color: ${(props) => props.theme.body};
+  }
 `;
 
-export default GlobalStyles
+export default withTheme(GlobalStyles)

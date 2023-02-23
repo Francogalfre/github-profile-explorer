@@ -3,6 +3,9 @@ import { AppContainer, Title, ThemeButton } from "./styles/AppComponents"
 import { darkTheme, lightTheme } from "./styles/theme"
 import { ThemeProvider } from "styled-components"
 
+// Global Styles
+import GlobalStyles from './styles/GlobalStyles'
+
 // Hooks
 import { useTheme } from "./hooks/useTheme"
 import { useGetUser } from "./hooks/useGetUser"
@@ -11,13 +14,13 @@ import { useGetUser } from "./hooks/useGetUser"
 import Search from "./components/Search/Search"
 import UserCard from "./components/UserCard/UserCard"
 
-
 function App() {
   const { isDarkTheme, toggleTheme } = useTheme()
   const { setKeyword, user } = useGetUser()
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <GlobalStyles />
       <AppContainer>
         <Title>GitFinder</Title>
 
