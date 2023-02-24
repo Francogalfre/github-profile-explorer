@@ -1,5 +1,13 @@
 // Styled Components
-import styled from "styled-components"
+import styled from "styled-components";
+
+export const Title = styled.h2`
+  color: ${(props) => props.theme.title};
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: 1px;
+  padding-bottom: 25px;
+`;
 
 export const Form = styled.form`
   display: flex;
@@ -8,7 +16,7 @@ export const Form = styled.form`
   width: 100%;
   height: 40px;
   gap: 15px;
-`
+`;
 
 export const Input = styled.input`
   background: transparent;
@@ -24,7 +32,7 @@ export const Input = styled.input`
     border: 1px solid #ccc;
     outline: none;
   }
-  
+
   &:hover {
     transform: translateY(-2px);
   }
@@ -32,7 +40,7 @@ export const Input = styled.input`
   @media screen and (max-width: 420px) {
     width: 200px;
   }
-`
+`;
 
 export const Button = styled.button`
   display: flex;
@@ -48,4 +56,4 @@ export const Button = styled.button`
   &:hover {
     transform: translateY(-2px);
   }
-`
+`;

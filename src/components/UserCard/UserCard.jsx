@@ -1,11 +1,31 @@
 // Styled Components
-import { Container, CardLeft, Image, Title, SocialMediaContainer, DivFlex, DivRow, Subtitle, CardRight, BlogLink, Card, Button, DescriptionContainer } from "./_Styled.js";
+import {
+  Container,
+  CardLeft,
+  Image,
+  Title,
+  SocialMediaContainer,
+  DivFlex,
+  DivRow,
+  Subtitle,
+  CardRight,
+  BlogLink,
+  Card,
+  Button,
+  DescriptionContainer,
+} from "./_Styled.js";
 
 // Icons
 import { FaCity, FaMap, FaTwitter, FaLink } from "react-icons/fa";
-import { RxGithubLogo } from "react-icons/rx"
+import { RxGithubLogo } from "react-icons/rx";
 
-const UserCard = ({ user }) => {
+// Context
+import { useContext } from "react";
+import { ProfileContext } from "../../context/profileContext.jsx";
+
+const UserCard = () => {
+  const { user } = useContext(ProfileContext);
+
   // Social Media Links
   const SOCIAL_MEDIA = [
     {
@@ -28,21 +48,21 @@ const UserCard = ({ user }) => {
   // Followers Cards
   const PROFILE_FOLLOWS = [
     {
-      title: 'Followers',
+      title: "Followers",
       text: `${user.followers}`,
-      key: 1
+      key: 1,
     },
     {
-      title: 'Following',
+      title: "Following",
       text: `${user.following}`,
-      key: 2
+      key: 2,
     },
     {
-      title: 'Repositories',
+      title: "Repositories",
       text: `${user.public_repos}`,
-      key: 3
-    }
-  ]
+      key: 3,
+    },
+  ];
 
   return (
     <Container>
@@ -80,23 +100,21 @@ const UserCard = ({ user }) => {
 
         <BlogLink>
           <FaLink />
-          <a href={user.blog}>{user.blog === "" ? "Blog no Available" : `${user.blog}`}</a>
+          <a href={user.blog}>
+            {user.blog === "" ? "Blog no Available" : `${user.blog}`}
+          </a>
         </BlogLink>
 
         <DivRow>
-          {
-            PROFILE_FOLLOWS.map((card) => (
-              <Card key={card.key}>
-                <h1>{card.title}</h1>
-                <span>{card.text}</span>
-              </Card>
-            ))
-          }
+          {PROFILE_FOLLOWS.map((card) => (
+            <Card key={card.key}>
+              <h1>{card.title}</h1>
+              <span>{card.text}</span>
+            </Card>
+          ))}
         </DivRow>
 
-        <Button>
-          View Repositories
-        </Button>
+        <Button>View Repositories</Button>
       </CardRight>
     </Container>
   );

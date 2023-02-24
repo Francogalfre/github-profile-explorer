@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export function useTheme() {
   const [theme, setTheme] = useState("dark");
@@ -11,5 +11,3 @@ export function useTheme() {
 
   return { isDarkTheme, toggleTheme };
 }
-
-

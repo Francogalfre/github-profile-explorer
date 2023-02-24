@@ -1,44 +1,38 @@
 // Styled Components
-import { AppContainer, Title, ThemeButton } from "./styles/AppComponents"
-import { darkTheme, lightTheme } from "./styles/theme"
-import { ThemeProvider } from "styled-components"
+import { AppContainer } from "./styles/AppComponents";
+import { darkTheme, lightTheme } from "./styles/theme";
+import { ThemeProvider } from "styled-components";
 
 // Global Styles
-import GlobalStyles from './styles/GlobalStyles'
+import GlobalStyles from "./styles/GlobalStyles";
 
 // Hooks
-import { useTheme } from "./hooks/useTheme"
-import { useGetUser } from "./hooks/useGetUser"
+import { useTheme } from "./hooks/useTheme";
 
 // Components
-import Search from "./components/Search/Search"
-import UserCard from "./components/UserCard/UserCard"
+import Search from "./components/Search/Search";
+import UserCard from "./components/UserCard/UserCard";
+import ThemeButton from "./components/ThemeButton/ThemeButton";
+
+// Context
+import { ProfileProvider } from "./context/profileContext";
 
 function App() {
-  const { isDarkTheme, toggleTheme } = useTheme()
-  const { setKeyword, user } = useGetUser()
+  const { isDarkTheme } = useTheme();
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
       <AppContainer>
-        <Title>GitFinder</Title>
+        <ProfileProvider>
+          <Search />
+          <UserCard />
+        </ProfileProvider>
 
-        <Search setUser={setKeyword} />
-        <UserCard user={user} />
-
-        <ThemeButton onClick={toggleTheme}>
-          Change to 
-          {
-            isDarkTheme 
-              ? ' Light Mode'
-              : ' Dark Mode'
-          }
-        </ThemeButton>
-        
+        <ThemeButton />
       </AppContainer>
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;
