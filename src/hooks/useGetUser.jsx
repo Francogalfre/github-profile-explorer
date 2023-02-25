@@ -5,11 +5,11 @@ export function useGetUser() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${keyword}`)
-      .then((response) => response.json())
-      .then((json) => {
-        setUser(json);
-      });
+    (async () => {
+      const response = await fetch(`https://api.github.com/users/${keyword}`)
+      const returnedUser = await res.json()
+      setUser(returnedUser)
+    })()
   }, [keyword]);
 
   return { setKeyword, user };
