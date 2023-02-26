@@ -57,3 +57,9 @@ export const Button = styled.button`
     transform: translateY(-2px);
   }
 `;
+
+export const Error = styled.span`
+  font-size: 16px;
+  color: red;
+  padding: 5px 0px;
+`

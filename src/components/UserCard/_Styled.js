@@ -1,5 +1,5 @@
 // Styled Components
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.section`
   max-width: 1200px;
@@ -10,7 +10,7 @@ export const Container = styled.section`
   gap: 30px;
 
   @media screen and (max-width: 1200px) {
-    gap: 0px; 
+    gap: 0px;
   }
 
   @media screen and (max-width: 920px) {
@@ -18,7 +18,7 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
   }
-`
+`;
 
 export const CardLeft = styled.div`
   display: flex;
@@ -32,7 +32,8 @@ export const CardLeft = styled.div`
   border-radius: ${(props) => props.theme.radius};
 
   @media screen and (max-width: 1200px) {
-    border-radius: ${(props) => props.theme.radius} 0px 0px ${(props) => props.theme.radius};
+    border-radius: ${(props) => props.theme.radius} 0px 0px
+      ${(props) => props.theme.radius};
     width: 250px;
     border-right: 1px solid rgba(234, 234, 234, 0.2);
   }
@@ -62,7 +63,7 @@ export const CardLeft = styled.div`
     text-align: center;
     padding: 20px 0px;
   }
-`
+`;
 
 export const Image = styled.img`
   width: 200px;
@@ -71,13 +72,13 @@ export const Image = styled.img`
   @media screen and (max-width: 920px) {
     width: 100px;
   }
-`
+`;
 
 export const Title = styled.h1`
   color: ${(props) => props.theme.title};
   font-size: 25px;
   font-weight: 500;
-`
+`;
 
 export const SocialMediaContainer = styled.div`
   display: flex;
@@ -97,14 +98,14 @@ export const SocialMediaContainer = styled.div`
     font-weight: 400;
     font-size: 15px;
   }
-`
+`;
 
 export const DivFlex = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-`
+`;
 
 export const DivRow = styled.div`
   display: flex;
@@ -115,7 +116,7 @@ export const DivRow = styled.div`
   @media screen and (max-width: 360px) {
     flex-direction: column;
   }
-`
+`;
 
 export const Subtitle = styled.span`
   color: ${(props) => props.theme.secondary};
@@ -139,7 +140,7 @@ export const Subtitle = styled.span`
     font-weight: 8px;
     width: 200px;
   }
-`
+`;
 
 export const CardRight = styled.div`
   display: flex;
@@ -154,7 +155,8 @@ export const CardRight = styled.div`
 
   @media screen and (max-width: 1200px) {
     width: 650px;
-    border-radius: 0px ${(props) => props.theme.radius} ${(props) => props.theme.radius} 0px;
+    border-radius: 0px ${(props) => props.theme.radius}
+      ${(props) => props.theme.radius} 0px;
     padding: 30px 30px 30px 20px;
   }
 
@@ -187,7 +189,7 @@ export const CardRight = styled.div`
     border-radius: ${(props) => props.theme.radius};
     padding: 20px 0px;
   }
-`
+`;
 
 export const DescriptionContainer = styled.div`
   display: flex;
@@ -206,7 +208,7 @@ export const DescriptionContainer = styled.div`
   @media screen and (max-width: 630px) {
     width: 80%;
   }
-`
+`;
 
 export const BlogLink = styled.span`
   display: flex;
@@ -219,7 +221,7 @@ export const BlogLink = styled.span`
     text-decoration: none;
     color: ${(props) => props.theme.title};
   }
-`
+`;
 
 export const Card = styled.div`
   display: flex;
@@ -268,7 +270,7 @@ export const Card = styled.div`
   &:hover {
     transform: translateY(-2px);
   }
-`
+`;
 
 export const Button = styled.button`
   width: 250px;
@@ -289,4 +291,4 @@ export const Button = styled.button`
     width: 200px;
     font-size: 12px;
   }
-`
+`;

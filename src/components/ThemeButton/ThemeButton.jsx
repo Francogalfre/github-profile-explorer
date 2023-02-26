@@ -1,14 +1,14 @@
 import React from "react";
-import { useTheme } from "styled-components";
+import { useTheme } from "../../hooks/useTheme";
+import { StyledThemeButton } from "./_Styled"
 
-const ThemeButton = () => {
-  const { toggleTheme, isDarkTheme } = useTheme();
+const ThemeButton = ({ toggleTheme, isDarkTheme }) => {
 
   return (
-    <ThemeButton onClick={toggleTheme}>
+    <StyledThemeButton onClick={toggleTheme}>
       Change to
       {isDarkTheme ? " Light Mode" : " Dark Mode"}
-    </ThemeButton>
+    </StyledThemeButton>
   );
 };
 

@@ -16,4 +16,4 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export default withTheme(GlobalStyles)
+export default withTheme(GlobalStyles);

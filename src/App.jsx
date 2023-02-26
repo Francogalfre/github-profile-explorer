@@ -2,7 +2,6 @@
 import { AppContainer } from "./styles/AppComponents";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { ThemeProvider } from "styled-components";
-
 // Global Styles
 import GlobalStyles from "./styles/GlobalStyles";
 
@@ -18,7 +17,7 @@ import ThemeButton from "./components/ThemeButton/ThemeButton";
 import { ProfileProvider } from "./context/profileContext";
 
 function App() {
-  const { isDarkTheme } = useTheme();
+  const { isDarkTheme, toggleTheme } = useTheme();
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
@@ -28,8 +27,7 @@ function App() {
           <Search />
           <UserCard />
         </ProfileProvider>
-
-        <ThemeButton />
+        <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
       </AppContainer>
     </ThemeProvider>
   );
