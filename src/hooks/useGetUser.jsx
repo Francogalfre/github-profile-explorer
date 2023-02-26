@@ -15,14 +15,21 @@ export function useGetUser() {
 
   const fetchFn = () => axios.get(`https://api.github.com/users/${keyword}`).then(res => res.data)
 
-  const { data, isLoading, error, isError } = useQuery({
+  const { data, isFetching, error, isError, isInitialLoading } = useQuery({
     queryKey: ['userProfile', keyword],
     queryFn: fetchFn,
     enabled: keyword !== "",
     refetchOnMount: false,
     refetchOnReconnect: false,
-    refetchOnWindowFocus: false
+    refetchOnWindowFocus: false,
   })
 
-  return { setKeyword, user: data || emptyUser, isLoading, error, isError };
+  return { 
+    setKeyword, 
+    user: data || emptyUser, 
+    isFetching, 
+    isInitialLoading, 
+    error, 
+    isError 
+  };
 }

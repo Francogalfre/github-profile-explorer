@@ -23,8 +23,11 @@ import { RxGithubLogo } from "react-icons/rx";
 import { useContext } from "react";
 import { ProfileContext } from "../../context/profileContext.jsx";
 
+// Loading
+import Spinner from "../Loading/Spinner.jsx";
+
 const UserCard = () => {
-  const { user } = useContext(ProfileContext);
+  const { user, isFetching, isInitialLoading } = useContext(ProfileContext);
 
   // Social Media Links
   const SOCIAL_MEDIA = [
@@ -65,58 +68,64 @@ const UserCard = () => {
   ];
 
   return (
-    <Container>
-      <CardLeft>
-        <a href={user.html_url}>
-          <Image src={user.avatar_url} alt={`Avatar of ${user.name}`} />
-        </a>
+    <>
+      { isFetching || isInitialLoading ? (
+        <Spinner />
+      ) : (
+        <Container>
+          <CardLeft>
+            <a href={user.html_url}>
+              <Image src={user.avatar_url} alt={`Avatar of ${user.name}`} />
+            </a>
 
-        <div>
-          <Title>{user.name}</Title>
-          <Subtitle>@{user.login}</Subtitle>
-        </div>
+            <div>
+              <Title>{user.name}</Title>
+              <Subtitle>@{user.login}</Subtitle>
+            </div>
 
-        <DivFlex>
-          {SOCIAL_MEDIA.map((media) => (
-            <SocialMediaContainer key={media.key}>
-              <div>{media.icon}</div>
-              <span>
-                {media.text === "null" ? "No Available" : `${media.text}`}
-              </span>
-            </SocialMediaContainer>
-          ))}
-        </DivFlex>
-      </CardLeft>
+            <DivFlex>
+              {SOCIAL_MEDIA.map((media) => (
+                <SocialMediaContainer key={media.key}>
+                  <div>{media.icon}</div>
+                  <span>
+                    {media.text === "null" ? "No Available" : `${media.text}`}
+                  </span>
+                </SocialMediaContainer>
+              ))}
+            </DivFlex>
+          </CardLeft>
 
-      <CardRight>
-        <DescriptionContainer>
-          <Title>Description</Title>
-          <a href={user.html_url}>
-            <RxGithubLogo />
-          </a>
-        </DescriptionContainer>
+          <CardRight>
+            <DescriptionContainer>
+              <Title>Description</Title>
+              <a href={user.html_url}>
+                <RxGithubLogo />
+              </a>
+            </DescriptionContainer>
 
-        <Subtitle>{user.bio}</Subtitle>
+            <Subtitle>{user.bio}</Subtitle>
 
-        <BlogLink>
-          <FaLink />
-          <a href={user.blog}>
-            {user.blog === "" ? "Blog no Available" : `${user.blog}`}
-          </a>
-        </BlogLink>
+            <BlogLink>
+              <FaLink />
+              <a href={user.blog}>
+                {user.blog === "" ? "Blog no Available" : `${user.blog}`}
+              </a>
+            </BlogLink>
 
-        <DivRow>
-          {PROFILE_FOLLOWS.map((card) => (
-            <Card key={card.key}>
-              <h1>{card.title}</h1>
-              <span>{card.text}</span>
-            </Card>
-          ))}
-        </DivRow>
+            <DivRow>
+              {PROFILE_FOLLOWS.map((card) => (
+                <Card key={card.key}>
+                  <h1>{card.title}</h1>
+                  <span>{card.text}</span>
+                </Card>
+              ))}
+            </DivRow>
 
-        <Button>View Repositories</Button>
-      </CardRight>
-    </Container>
+            <Button>View Repositories</Button>
+          </CardRight>
+        </Container>
+      )}
+    </>
   );
 };
 

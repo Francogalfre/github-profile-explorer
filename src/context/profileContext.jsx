@@ -6,10 +6,10 @@ import { useGetUser } from "../hooks/useGetUser";
 export const ProfileContext = createContext();
 
 export function ProfileProvider({ children }) {
-  const { setKeyword, user, isLoading, error } = useGetUser();
+  const { setKeyword, user, error, isFetching, isInitialLoading } = useGetUser();
 
   return (
-    <ProfileContext.Provider value={{ setKeyword, user, isLoading, error }}>
+    <ProfileContext.Provider value={{ setKeyword, user, error, isFetching, isInitialLoading }}>
       {children}
     </ProfileContext.Provider>
   );

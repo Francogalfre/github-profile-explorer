@@ -1,7 +1,7 @@
 // Styled Components
 import styled from "styled-components";
 
-export const ThemeBTN = styled.button`
+export const StyledThemeButton = styled.button`
   width: 250px;
   margin-top: 30px;
   padding: 15px 20px;

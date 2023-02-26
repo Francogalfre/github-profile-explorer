@@ -96,6 +96,7 @@ export const SocialMediaContainer = styled.div`
   & span {
     color: ${(props) => props.theme.secondary};
     font-weight: 400;
+    width: 230px;
     font-size: 15px;
   }
 `;
