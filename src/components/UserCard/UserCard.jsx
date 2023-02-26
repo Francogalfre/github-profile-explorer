@@ -67,12 +67,16 @@ const UserCard = () => {
     },
   ];
 
+  function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+  }
+
   return (
     <>
       { isFetching || isInitialLoading ? (
         <Spinner />
       ) : (
-        <Container>
+        <Container style={isEmpty(user) ? {position: 'absolute', left: '-1200px'} : {}}>
           <CardLeft>
             <a href={user.html_url}>
               <Image src={user.avatar_url} alt={`Avatar of ${user.name}`} />

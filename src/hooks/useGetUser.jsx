@@ -7,9 +7,6 @@ import { useQuery } from '@tanstack/react-query'
 // Axios
 import axios from 'axios'
 
-// Mocks
-import emptyUser from "../mocks/emptyUser.json"
-
 export function useGetUser() {
   const [keyword, setKeyword] = useState("");
 
@@ -26,7 +23,7 @@ export function useGetUser() {
 
   return { 
     setKeyword, 
-    user: data || emptyUser, 
+    user: data || {}, 
     isFetching, 
     isInitialLoading, 
     error, 

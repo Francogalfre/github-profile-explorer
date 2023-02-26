@@ -8,6 +8,7 @@ export const Container = styled.section`
   text-align: start;
   padding-top: 30px;
   gap: 30px;
+  transition: left 0.3s ease;
 
   @media screen and (max-width: 1200px) {
     gap: 0px;

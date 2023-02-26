@@ -6,13 +6,13 @@ export const Title = styled.h2`
   font-weight: 500;
   font-size: 40px;
   letter-spacing: 1px;
-  padding-bottom: 25px;
+  padding-bottom: 35px;
 `;
 
 export const Form = styled.form`
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   width: 100%;
   height: 40px;
   gap: 15px;
@@ -60,6 +60,6 @@ export const Button = styled.button`
 
 export const Error = styled.span`
   font-size: 16px;
-  color: red;
+  color: #ED4337;
   padding: 5px 0px;
 `

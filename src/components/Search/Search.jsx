@@ -11,11 +11,30 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { ProfileContext } from "../../context/profileContext";
 
 const Search = () => {
-  const { setKeyword, error, isError } = useContext(ProfileContext);
+  const { setKeyword } = useContext(ProfileContext);
+
   const [search, setSearch] = useState("");
+  const [error, setError] = useState("")
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+
+    if(search.startsWith(" ")) {
+      setError("User cannot start with a space")
+      return
+    }
+
+    if(search === "") {
+      setError("You can't search for an empty username.")
+      return;
+    }
+
+    if(search.length > 100) {
+      setError("The user has a max of 100 characters")
+      return;
+    }
+
+    setError("")
     setKeyword(search);
   };
 
@@ -29,19 +48,19 @@ const Search = () => {
 
       <Form onSubmit={handleSubmit}>
         <Input
-          style={isError && {border: '1px solid red'}}
+          style={error !== "" ? {border: '1px solid #ED4337'} : {}}
           onChange={handleChange}
           type="text"
           placeholder="Francogalfre..."
           value={search}
         />
-        <Button type="submit" style={isError && {border: '1px solid red'}}>
+        <Button type="submit" style={error !== "" ? {border: '1px solid #ED4337'} : {}}>
           <AiOutlineSearch />
         </Button>
       </Form>
 
       {
-        isError &&
+        error &&
         <Error>{error}</Error>
       }
     </>
