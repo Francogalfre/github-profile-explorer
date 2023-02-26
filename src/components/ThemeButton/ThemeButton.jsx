@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styled  Components
-import { ThemeBTN } from "./_Styled"
+import { ThemeBTN } from './_Styled'
 
 const ThemeButton = ({ toggleTheme, isDarkTheme }) => {
 
