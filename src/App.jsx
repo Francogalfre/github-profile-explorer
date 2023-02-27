@@ -1,5 +1,4 @@
 // Styled Components
-import { AppContainer } from "./styles/AppComponents";
 import { darkTheme, lightTheme } from "./styles/theme";
 import { ThemeProvider } from "styled-components";
 
@@ -24,18 +23,14 @@ function App() {
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <AppContainer>
-        <ProfileProvider>
-          
+      <ProfileProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/repos" element={<Repos />} />
           </Routes>
-
+          
           <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-
-        </ProfileProvider>
-      </AppContainer>
+      </ProfileProvider>
     </ThemeProvider>
   );
 }

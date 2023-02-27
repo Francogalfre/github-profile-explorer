@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 // Components
 import Search from "../components/Search/Search";
@@ -10,7 +10,7 @@ const Home = () => {
       <Search />
       <UserCard />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

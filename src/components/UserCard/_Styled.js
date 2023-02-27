@@ -60,6 +60,8 @@ export const CardLeft = styled.div`
 
   @media screen and (max-width: 360px) {
     flex-direction: column;
+    text-align: center;
+    justify-content: center;
     width: 250px;
     gap: 25px;
     border-radius: ${(props) => props.theme.radius};
@@ -101,6 +103,11 @@ export const SocialMediaContainer = styled.div`
     font-weight: 400;
     width: 230px;
     font-size: 15px;
+    text-align: start;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 180px;
   }
 `;
 
