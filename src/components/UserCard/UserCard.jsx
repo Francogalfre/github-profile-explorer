@@ -26,6 +26,7 @@ import { ProfileContext } from "../../context/profileContext.jsx";
 // Loading
 import Spinner from "../Loading/Spinner.jsx";
 
+
 const UserCard = () => {
   const { user, isFetching, isInitialLoading } = useContext(ProfileContext);
 
@@ -125,7 +126,7 @@ const UserCard = () => {
               ))}
             </DivRow>
 
-            <Button>View Repositories</Button>
+            <Button to={"/repos"}>View Repositories</Button>
           </CardRight>
         </Container>
       )}

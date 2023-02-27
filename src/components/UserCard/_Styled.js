@@ -1,6 +1,8 @@
 // Styled Components
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const Container = styled.section`
   max-width: 1200px;
   display: flex;
@@ -274,7 +276,7 @@ export const Card = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   width: 250px;
   padding: 15px 20px;
   font-size: 15px;
@@ -284,6 +286,8 @@ export const Button = styled.button`
   color: ${(props) => props.theme.title};
   cursor: pointer;
   border: none;
+  text-decoration: none;
+  text-align: center;
 
   &:hover {
     transform: translateY(-2px);
