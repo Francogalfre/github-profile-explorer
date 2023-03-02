@@ -9,9 +9,6 @@ import { useTheme } from "./hooks/useTheme";
 import Home from "./pages/Home";
 import Repos from "./pages/Repos";
 
-// Components
-import ThemeButton from "./components/ThemeButton/ThemeButton"
-
 // Context
 import { ProfileProvider } from "./context/profileContext";
 
@@ -24,12 +21,10 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <ProfileProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/repos" element={<Repos />} />
-          </Routes>
-          
-          <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+        <Routes>
+          <Route path="/" element={<Home toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />} />
+          <Route path="/repos" element={<Repos toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />} />
+        </Routes>
       </ProfileProvider>
     </ThemeProvider>
   );

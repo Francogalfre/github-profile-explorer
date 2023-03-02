@@ -1,14 +1,26 @@
 import React from "react";
 
 // Styled  Components
-import { StyledThemeButton } from "./_Styled";
+import { Switch, Input, ButtonTheme, Icon } from "./Styled";
+
+// Icons
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs"
 
 const ThemeButton = ({ toggleTheme, isDarkTheme }) => {
   return (
-    <StyledThemeButton onClick={toggleTheme}>
-      Change to
-      {isDarkTheme ? " Light Mode" : " Dark Mode"}
-    </StyledThemeButton>
+    <>
+      <ButtonTheme>
+        <Icon><BsFillSunFill /></Icon>
+
+        <div>
+          <Input type="checkbox" id="btn-switch" onChange={toggleTheme} checked={isDarkTheme ? true : false} />
+          <Switch className="switch" htmlFor="btn-switch" ></Switch>
+        </div>
+
+        <Icon><BsFillMoonFill /></Icon>
+      </ButtonTheme>
+
+    </>
   );
 };
 
