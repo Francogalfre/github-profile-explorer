@@ -19,7 +19,7 @@ Hello, this project was made by Franco Galfre to practice my react skills. 😻
 
 ## Demo
 
-you can try the game here : ( https://github-profiles-search.vercel.app )
+you can try the game here : ( https://github-profiles-explorer.vercel.app )
 
 ## Authors
 
