@@ -1,8 +1,8 @@
 # GitHub Profile Searcher
 
-This project is a website that allows you to search for a GitHub profile and retrieve all the information related to that profile. It was built using React, Styled Components, Axios, React Query, and React Router.
+<span>This project is a website that allows you to search for a GitHub profile and retrieve all the information related to that profile. It was built using React, Styled Components, Axios, React Query, and React Router. 🪐<span/>
 
-![logo](https://i.imgur.com/vfY7Rte.jpg)
+![logo](https://i.imgur.com/J5Iq5wm.jpg)
 
 Hello, this project was made by Franco Galfre to practice my react skills. 😻
 
@@ -19,7 +19,7 @@ Hello, this project was made by Franco Galfre to practice my react skills. 😻
 
 ## Demo
 
-you can try the game here : ( https://github-profiles-explorer.vercel.app )
+you can try the game here : ( https://github-profiles-explorer.vercel.app ) 🌝
 
 ## Authors
 
