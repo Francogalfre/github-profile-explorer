@@ -54,8 +54,9 @@ export const CardLeft = styled.div`
     width: 340px;
     gap: 25px;
     border-radius: ${(props) => props.theme.radius};
-    text-align: center;
-    padding: 20px 0px;
+    text-align: start;
+    justify-content: start;
+    align-items: start;
   }
 
   @media screen and (max-width: 380px) {
@@ -65,8 +66,7 @@ export const CardLeft = styled.div`
     width: 250px;
     gap: 25px;
     border-radius: ${(props) => props.theme.radius};
-    text-align: center;
-    padding: 20px 0px;
+    text-align: start;
   }
 `;
 
@@ -106,6 +106,10 @@ export const SocialMediaContainer = styled.div`
     text-align: start;
   }
 
+  @media screen and (max-width: 630px) {
+    text-align: center;
+  }
+
   @media screen and (max-width: 380px) {
     width: 180px;
   }
@@ -117,6 +121,10 @@ export const DivFlex = styled.div`
   align-items: flex-start;
   gap: 8px;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 630px) {
+    gap: 12px;
+  }
 `;
 
 export const DivRow = styled.div`
@@ -184,23 +192,21 @@ export const CardRight = styled.div`
   @media screen and (max-width: 630px) {
     gap: 35px;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    text-align: start;
+    justify-content: start;
+    align-items: flex-start;
     width: 340px;
     border-radius: ${(props) => props.theme.radius};
-    padding: 20px 0px;
   }
 
   @media screen and (max-width: 380px) {
     gap: 35px;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    text-align: start;
+    justify-content: start;
+    align-items: start;
     width: 250px;
     border-radius: ${(props) => props.theme.radius};
-    padding: 20px 0px;
   }
 `;
 
@@ -219,7 +225,7 @@ export const DescriptionContainer = styled.div`
   }
 
   @media screen and (max-width: 630px) {
-    width: 80%;
+    width: 100%;
   }
 `;
 
@@ -233,6 +239,10 @@ export const BlogLink = styled.span`
   & a {
     text-decoration: none;
     color: ${(props) => props.theme.title};
+
+    @media screen and (max-width: 380px) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -251,6 +261,7 @@ export const Card = styled.div`
 
   @media screen and (max-width: 380px) {
     padding: 12px 18px;
+    width: 100%;
   }
 
   & h1 {

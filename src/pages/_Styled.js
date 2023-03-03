@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 export const ReposContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 25px;
   height: 100%;
   padding-top: 30px;
 `
@@ -18,6 +17,7 @@ export const TitleContainer = styled.div`
   text-align: center;
   align-items: center;
   gap: 15px;
+  padding-bottom: 35px;
 `
 
 export const ExitButton = styled(Link)`
