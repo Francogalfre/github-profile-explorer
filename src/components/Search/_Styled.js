@@ -8,6 +8,10 @@ export const Title = styled.h2`
   letter-spacing: 1px;
   padding-bottom: 35px;
   transition: color 0.2s ease;
+
+  @media screen and (max-width: 630px) {
+    padding-top: 400px;
+  }
 `;
 
 export const Form = styled.form`

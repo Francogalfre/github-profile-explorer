@@ -6,6 +6,10 @@ export const ButtonTheme = styled.div`
   align-items: center;
   gap: 20px;
   margin-top: 30px;
+
+  @media screen and (max-width: 630px) {
+    padding-bottom: 20px;
+  }
 `
 
 export const Icon = styled.div`

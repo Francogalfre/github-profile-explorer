@@ -58,7 +58,7 @@ export const CardLeft = styled.div`
     padding: 20px 0px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     flex-direction: column;
     text-align: center;
     justify-content: center;
@@ -106,7 +106,7 @@ export const SocialMediaContainer = styled.div`
     text-align: start;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     width: 180px;
   }
 `;
@@ -116,6 +116,7 @@ export const DivFlex = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  flex-wrap: wrap;
 `;
 
 export const DivRow = styled.div`
@@ -123,8 +124,9 @@ export const DivRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 13px;
+  flex-wrap: wrap;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     flex-direction: column;
   }
 `;
@@ -147,7 +149,7 @@ export const Subtitle = styled.span`
     width: 300px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     font-weight: 8px;
     width: 200px;
   }
@@ -190,7 +192,7 @@ export const CardRight = styled.div`
     padding: 20px 0px;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     gap: 35px;
     flex-direction: column;
     text-align: center;
@@ -244,9 +246,10 @@ export const Card = styled.div`
 
   @media screen and (max-width: 630px) {
     padding: 10px 12px;
+    width: 100%;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     padding: 12px 18px;
   }
 
@@ -259,7 +262,7 @@ export const Card = styled.div`
       font-size: 13px;
     }
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
       font-size: 16px;
     }
   }
@@ -273,7 +276,7 @@ export const Card = styled.div`
       font-size: 13px;
     }
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 380px) {
       font-size: 16px;
     }
   }
@@ -300,7 +303,7 @@ export const Button = styled(Link)`
     transform: translateY(-2px);
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
     width: 200px;
     font-size: 12px;
   }

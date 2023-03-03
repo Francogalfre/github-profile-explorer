@@ -24,7 +24,6 @@ export const ExitButton = styled(Link)`
   rotate: 180deg;
   font-size: 20px;
   color: ${(props) => props.theme.title};
-
   &:hover {
     transform: translateY(2px);
   }

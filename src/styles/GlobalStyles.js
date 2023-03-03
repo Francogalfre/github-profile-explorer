@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
   html {
     background-color: ${(props) => props.theme.body};
   }
+
+  svg, path {
+    transition: none;
+  }
 `;
 
 export default withTheme(GlobalStyles);
