@@ -11,7 +11,6 @@ export const Card = styled.div`
   border-radius: ${(props) => props.theme.radius};
   padding: 25px 18px;
   cursor: pointer;
-  margin-bottom: 25px;
 
   &:hover {
     transform: translateY(-2px);

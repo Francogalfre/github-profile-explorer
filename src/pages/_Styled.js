@@ -9,6 +9,7 @@ export const ReposContainer = styled.div`
   flex-direction: column;
   height: 100%;
   padding-top: 30px;
+  gap: 25px;
 `
 
 export const TitleContainer = styled.div`
@@ -17,7 +18,7 @@ export const TitleContainer = styled.div`
   text-align: center;
   align-items: center;
   gap: 15px;
-  padding-bottom: 35px;
+  padding-bottom: 10px;
 `
 
 export const ExitButton = styled(Link)`
