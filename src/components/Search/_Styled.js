@@ -28,7 +28,7 @@ export const Input = styled.input`
   font-size: 16px;
   font-weight: 400;
   color: ${(props) => props.theme.title};
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 
   &:focus-visible {
     border: 1px solid #ccc;
