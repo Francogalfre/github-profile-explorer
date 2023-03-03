@@ -14,6 +14,7 @@ import {
 
 const ReposCard = ({ repo }) => {
   const topics = repo.topics;
+  const description = repo.description
 
   return (
     <a href={repo.html_url} style={{textDecoration: 'none'}}>
@@ -32,7 +33,13 @@ const ReposCard = ({ repo }) => {
           </div>
         </TitleContainer>
 
-        <Description>{repo.description}</Description>
+        <Description>
+          {
+            description
+              ? repo.description
+              : 'No Description'
+          }
+        </Description>
 
         <TopicsContainer>
           {topics.map((topic) => (

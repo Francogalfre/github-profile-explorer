@@ -7,6 +7,7 @@ export const Title = styled.h2`
   font-size: 40px;
   letter-spacing: 1px;
   padding-bottom: 35px;
+  transition: color 0.2s ease;
 `;
 
 export const Form = styled.form`
@@ -27,6 +28,7 @@ export const Input = styled.input`
   font-size: 16px;
   font-weight: 400;
   color: ${(props) => props.theme.title};
+  transition: color 0.2s ease;
 
   &:focus-visible {
     border: 1px solid #ccc;
@@ -49,9 +51,11 @@ export const Button = styled.button`
   font-size: 16px;
   color: ${(props) => props.theme.title};
   background-color: ${(props) => props.theme.button};
+  transition: background-color 0.3s ease;
   padding: 5px 13px;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);

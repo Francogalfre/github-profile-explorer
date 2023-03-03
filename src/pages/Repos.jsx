@@ -8,7 +8,7 @@ import Spinner from "../components/Loading/Spinner";
 import ThemeButton from "../components/ThemeButton/ThemeButton";
 
 // Styled Components
-import { ReposContainer, Title, TitleContainer, ExitButton } from "./_Styled";
+import { ReposContainer, Title, TitleContainer, ExitButton, Loading } from "./_Styled";
 
 // Icons
 import { RxExit } from "react-icons/rx";
@@ -19,7 +19,6 @@ const Repos = ({ toggleTheme, isDarkTheme }) => {
   return (
     <>
       <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-      
       <ReposContainer>
         <TitleContainer>
           <ExitButton to={"/"}>
@@ -29,7 +28,7 @@ const Repos = ({ toggleTheme, isDarkTheme }) => {
         </TitleContainer>
 
         {reposLoading ? (
-          <Spinner />
+          <Loading><Spinner /></Loading>
         ) : (
           <>
             {repos.map((repo) => (
