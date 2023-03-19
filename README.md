@@ -8,14 +8,13 @@ Hello, this project was made by Franco Galfre to practice my react skills. 😻
 
 ## Features
 
-* Search for a GitHub profile by username
+- Search for a GitHub profile by username
 
-* View profile information, including name, bio, profile picture, and number of followers and following
+- View profile information, including name, bio, profile picture, and number of followers and following
 
-* View a list of the user's repositories, including their name, description, number of stars, and number of views
+- View a list of the user's repositories, including their name, description, number of stars, and number of views
 
-* Change theme Dark or Light
-
+- Change theme Dark or Light
 
 ## Demo
 
